@@ -6,4 +6,6 @@ Các file `example_*.json` chỉ minh họa định dạng, không đủ để n
 - **Câu có đáp án:** `id`, `split` (`dev` hoặc `test`), `question`, `expected_answer`, `gold`: danh sách `{source_id, page, evidence}`. Với schema mẫu, mỗi evidence phải nằm trọn trong một chunk đúng nguồn và trang; các phần tử `gold` là evidence thay thế. Với câu multi-hop cần nhiều đoạn, bạn có thể mở rộng schema, ghi rõ nhóm evidence bắt buộc và cách chấm. Có thể thêm `filter` do người dùng cung cấp trước.
 - **Câu thiếu evidence:** `id`, `split`, `question`, `answerable: false`, `expected_behavior: "search_and_abstain"`, `absence_reason`. Xem `agent_cases_example.json`.
 
+Benchmark Day 7 được chia riêng: `day7/benchmark_dev.json` dùng để chọn cấu hình; `day7/benchmark_test.json` là holdout gồm 5 câu có đáp án và 2 câu thiếu evidence. Không dùng test để sửa query, tham số hoặc prompt sau khi xem kết quả.
+
 Không đưa `gold` hoặc nhãn đáp án vào model và retrieval tool. Ghi nguồn dữ liệu và quyền sử dụng. Cách chuyển một số định dạng Day 6: [starter/README.md](../starter/README.md).

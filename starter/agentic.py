@@ -1,10 +1,14 @@
-"""Example agent loop; connect a real model and the Day 6 retriever via adapters.
+"""Model-agnostic evidence-search loop used by the Day 7 agent runner.
 
-Adapters are intentionally not provided: Day 6 has no fixed database schema and
-model providers differ. Never use fake adapters to report benchmark quality.
+Real provider and retrieval adapters live in ``src/day7_agent.py``. Never use
+fake adapters to report benchmark quality.
 """
 from typing import Any, Protocol
-from baseline import pack_context
+
+try:  # Works both as `starter.agentic` and when starter/ is on sys.path.
+    from .baseline import pack_context
+except ImportError:
+    from baseline import pack_context
 
 
 class Controller(Protocol):
@@ -44,7 +48,15 @@ def run_agent(question: str, controller: Controller, retriever: Retriever, *,
     candidates: list[dict[str, Any]] = []
     events: list[dict[str, Any]] = []
     for _ in range(max_searches + 1):
+        searches_used = sum(e['event'] == 'search' for e in events)
+        if searches_used >= max_searches and history:
+            # Give the controller one final turn with its current context and
+            # require a grounded answer or abstention instead of another search.
+            history[0]['force_answer'] = True
         action = controller.decide(question, history)
+        model_call = action.pop('_model_call', None)
+        if isinstance(model_call, dict):
+            events.append({'event': 'model_call', **model_call})
         if action.get('action') == 'search':
             if sum(e['event'] == 'search' for e in events) >= max_searches:
                 return {'status': 'abstain', 'answer': 'Không đủ bằng chứng để trả lời.', 'citations': [], 'events': events + [{'event': 'search_limit'}]}
@@ -54,11 +66,20 @@ def run_agent(question: str, controller: Controller, retriever: Retriever, *,
             results = retriever.search(query, filters=filters, top_k=top_k)
             if len(results) > top_k or len({r['id'] for r in results}) != len(results):
                 raise ValueError('retriever phải trả tối đa top_k chunk ID duy nhất')
-            candidates.extend(results)
+            for result in results:
+                previous = chunks.get(result['id'])
+                if previous is None or float(result.get('score', 0)) > float(previous.get('score', 0)):
+                    chunks[result['id']] = result
+            candidates = sorted(
+                chunks.values(),
+                key=lambda item: (-float(item.get('score', 0)), item['id']),
+            )
             context, ids = pack_context(candidates, budget=budget)
             chunks = {c['id']: c for c in candidates if c['id'] in ids}
-            events.append({'event': 'search', 'query': query, 'filter': filters, 'results': results,
-                           'context': context, 'context_ids': ids})
+            events.append({'event': 'search', 'query': query, 'filter': filters,
+                           'top_k': top_k, 'budget_chars': budget, 'results': results,
+                           'context': context, 'context_ids': ids,
+                           'context_chars': len(context)})
             # Send only the latest cumulative context; avoid multiplying the budget.
             history = [{'tool': 'search', 'queries': [e['query'] for e in events if e['event'] == 'search'],
                         'context': context, 'context_ids': ids}]

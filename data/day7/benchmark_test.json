@@ -1,0 +1,93 @@
+[
+  {
+    "id": "t01_worker_escalation",
+    "split": "test",
+    "question": "If a worker believed a foreman had treated him unfairly, what could the worker do?",
+    "answerable": true,
+    "expected_answer": "A worker could go over the foreman and speak directly to the head of the factory.",
+    "gold": [
+      {
+        "source_id": "pg7213-my-life-and-work",
+        "page": 40,
+        "evidence": "Any workman can go to anybody, and so established has become this custom, that a foreman does not get sore if a workman goes over him and directly to the head of the factory."
+      }
+    ],
+    "filter": null
+  },
+  {
+    "id": "t02_profit_sharing",
+    "split": "test",
+    "question": "How did Ford's profit-sharing formula treat workers with lower hourly wages?",
+    "answerable": true,
+    "expected_answer": "It gave employees on the lowest hourly rates a larger proportion of the profit-sharing amount.",
+    "gold": [
+      {
+        "source_id": "pg7213-my-life-and-work",
+        "page": 55,
+        "evidence": "so as to give those receiving the lowest hourly rate the largest proportion of profits"
+      }
+    ],
+    "filter": null
+  },
+  {
+    "id": "t03_repetitive_task",
+    "split": "test",
+    "question": "What did the worker do a few weeks after Ford moved him from a repetitive treadle job?",
+    "answerable": true,
+    "expected_answer": "He asked to return to his original job.",
+    "gold": [
+      {
+        "source_id": "pg7213-my-life-and-work",
+        "page": 45,
+        "evidence": "In a few weeks he asked for his old job again."
+      }
+    ],
+    "filter": null
+  },
+  {
+    "id": "t04_tractor_capacity",
+    "split": "test",
+    "question": "What annual production capacity did Ford expect from the completed tractor plant?",
+    "answerable": true,
+    "expected_answer": "Ford expected the plant to produce one million tractors a year.",
+    "gold": [
+      {
+        "source_id": "pg7213-my-life-and-work",
+        "page": 85,
+        "evidence": "The capacity of the present plant is one million tractors a year."
+      }
+    ],
+    "filter": null
+  },
+  {
+    "id": "t05_hospital_audience",
+    "split": "test",
+    "question": "Which patients was Ford's Detroit hospital intended to serve?",
+    "answerable": true,
+    "expected_answer": "It was intended for people able to pay a moderate amount who did not want to feel they were receiving charity.",
+    "gold": [
+      {
+        "source_id": "pg7213-my-life-and-work",
+        "page": 90,
+        "evidence": "those who can afford to pay only a moderate amount and yet desire to pay without a feeling that they are recipients of charity"
+      }
+    ],
+    "filter": null
+  },
+  {
+    "id": "t06_tractor_speed_absent",
+    "split": "test",
+    "question": "What was the Fordson tractor's maximum road speed?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The text discusses tractor production and field use but does not state a maximum road speed."
+  },
+  {
+    "id": "t07_hospital_postcode_absent",
+    "split": "test",
+    "question": "What postal code was assigned to Ford's hospital on West Grand Boulevard?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The book gives the hospital's street and city but does not provide a postal code."
+  }
+]

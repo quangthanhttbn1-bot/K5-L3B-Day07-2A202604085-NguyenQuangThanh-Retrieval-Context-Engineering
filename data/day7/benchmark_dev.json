@@ -1,0 +1,249 @@
+[
+    {
+        "id":  "q01",
+        "split":  "dev",
+        "question":  "On what date did Ford Motor Company produce car number five million?",
+        "answerable":  true,
+        "expected_answer":  "May 31, 1921.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  9,
+                         "evidence":  "On May 31, 1921, the Ford Motor Company turned out Car No. 5,000,000."
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q02",
+        "split":  "dev",
+        "question":  "When did Ford\u0027s first gasoline buggy first run satisfactorily?",
+        "answerable":  true,
+        "expected_answer":  "In the spring of 1893.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  9,
+                         "evidence":  "first ran satisfactorily along in the spring of 1893"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q03",
+        "split":  "dev",
+        "question":  "How old was Ford when he first encountered a road engine near Detroit?",
+        "answerable":  true,
+        "expected_answer":  "He was twelve years old.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  10,
+                         "evidence":  "was then twelve years old"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q04",
+        "split":  "dev",
+        "question":  "Why did Ford conclude steam was unsuitable for a light horseless carriage?",
+        "answerable":  true,
+        "expected_answer":  "His experience convinced him steam was unsuitable for a light vehicle, so he continued pursuing a horseless carriage.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  12,
+                         "evidence":  "steam was not suitable for light vehicles"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q05",
+        "split":  "dev",
+        "question":  "Which two engineering problems did Ford identify as the hardest to solve in developing his early car?",
+        "answerable":  true,
+        "expected_answer":  "Making and breaking the spark, and avoiding excess weight.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  14,
+                         "evidence":  "avoidance of excess weight"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q06",
+        "split":  "dev",
+        "question":  "What imbalance in business practice surprised Ford?",
+        "answerable":  true,
+        "expected_answer":  "Businesses gave much attention to finance and little attention to service.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  17,
+                         "evidence":  "large attention given to finance and the small attention to service"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q07",
+        "split":  "dev",
+        "question":  "What did Ford say many managers tried to achieve instead of competing by doing good work?",
+        "answerable":  true,
+        "expected_answer":  "They sought monopoly through artificial means.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  20,
+                         "evidence":  "getting a monopoly through artificial means"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q08",
+        "split":  "dev",
+        "question":  "What was the purpose of the 999, and what happened a week after its race?",
+        "answerable":  true,
+        "expected_answer":  "It demonstrated Ford could build a fast motorcar; a week after the race he formed the Ford Motor Company.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  23,
+                         "evidence":  "A week after the race I formed the Ford Motor Company."
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q09",
+        "split":  "dev",
+        "question":  "How did Ford determine the appropriate steel qualities for different car parts?",
+        "answerable":  true,
+        "expected_answer":  "He dismantled models and tested them to determine whether each part needed hard, tough, or elastic steel.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  29,
+                         "evidence":  "tested in detail to determine what kind of steel was best for every part"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q10",
+        "split":  "dev",
+        "question":  "Which four constructional units did Ford identify in the Model T?",
+        "answerable":  true,
+        "expected_answer":  "The power plant, frame, front axle, and rear axle.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  30,
+                         "evidence":  "the power plant, the frame, the front axle, and the rear axle"
+                     }
+                 ],
+        "filter":  {
+                       "section":  "Chapter Iv"
+                   }
+    },
+    {
+        "id":  "q11",
+        "split":  "dev",
+        "question":  "What was Ford\u0027s 1909 policy for models and chassis?",
+        "answerable":  true,
+        "expected_answer":  "Build only the Model T, with the same chassis for every car.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  31,
+                         "evidence":  "chassis would be exactly the same for all cars"
+                     }
+                 ],
+        "filter":  {
+                       "section":  "Chapter Iv"
+                   }
+    },
+    {
+        "id":  "q12",
+        "split":  "dev",
+        "question":  "Under the Model T color policy, what color could a customer choose?",
+        "answerable":  true,
+        "expected_answer":  "Black only.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  31,
+                         "evidence":  "so long as it is black"
+                     }
+                 ],
+        "filter":  {
+                       "section":  "Chapter Iv"
+                   }
+    },
+    {
+        "id":  "q13",
+        "split":  "dev",
+        "question":  "How did Ford describe the factory\u0027s growth between 1908 and 1911?",
+        "answerable":  true,
+        "expected_answer":  "Factory space grew from 2.65 to 32 acres; average employees grew from 1,908 to 4,110; cars built rose from just over 6,000 to nearly 35,000.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  32,
+                         "evidence":  "factory space increased from 2.65 to 32 acres"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q14",
+        "split":  "dev",
+        "question":  "What did Ford credit for the rapid move into large-scale production?",
+        "answerable":  true,
+        "expected_answer":  "The application of intelligently directed power and machinery.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  32,
+                         "evidence":  "application of intelligently directed power and machinery"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q16",
+        "split":  "dev",
+        "question":  "Which groups did Ford say needed to operate throughout the year to maximize business results?",
+        "answerable":  true,
+        "expected_answer":  "The factory must build, sales must sell, and dealers must buy cars all year.",
+        "gold":  [
+                     {
+                         "source_id":  "pg7213-my-life-and-work",
+                         "page":  70,
+                         "evidence":  "the sales department must sell, and the dealer must buy cars all the year through"
+                     }
+                 ],
+        "filter":  null
+    },
+    {
+        "id":  "q17_absent_vin",
+        "split":  "dev",
+        "question":  "What vehicle identification number (VIN) was assigned to Ford Motor Company car number 5,000,000?",
+        "answerable":  false,
+        "expected_behavior":  "search_and_abstain",
+        "absence_reason":  "The book gives the production milestone but does not provide a VIN for that car."
+    },
+    {
+        "id":  "q18_absent_engine_serial",
+        "split":  "dev",
+        "question":  "What serial number was stamped on the engine of Ford\u0027s first gasoline buggy?",
+        "answerable":  false,
+        "expected_behavior":  "search_and_abstain",
+        "absence_reason":  "The book describes the first gasoline buggy but does not state an engine serial number."
+    }
+]
